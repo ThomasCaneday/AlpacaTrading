@@ -4,14 +4,14 @@ import pandas as pd
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-
+from config import *
 
 def pairs_trading_algo(self):
     
     #Specify paper trading environment 
     os.environ["APCA_API_BASE_URL"] = "https://paper-api.alpaca.markets"
     #Insert API Credentials 
-    api = tradeapi.REST('API_KEY_ID', 'API_SECRET_KEY', api_version='v2') # or use ENV Vars shown below
+    api = tradeapi.REST('API_KEY', 'SECRET_KEY', api_version='v2') # or use ENV Vars shown below
     account = api.get_account()
     
     #The mail addresses and password
